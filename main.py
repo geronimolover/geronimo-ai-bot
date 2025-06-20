@@ -1,14 +1,18 @@
-from pyrogram import Client
-import os
+from pyrogram import Client, idle
 from config import Config
 
 bot = Client(
-    "geronimo_bot",
-    bot_token=Config.BOT_TOKEN,
+    "geronimo-bot",
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
-    plugins=dict(root="plugins")
+    bot_token=Config.BOT_TOKEN,
+    plugins={"root": "plugins"}
 )
 
 if __name__ == "__main__":
-    bot.run()
+    bot.start()
+    print("🤖 Bot started — synced with Telegram.")
+    idle()
+    bot.stop()
+    print("🛑 Bot stopped.")
+
