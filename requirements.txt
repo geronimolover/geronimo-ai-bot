@@ -1,0 +1,6 @@
+pyrogram==1.4.15
+tgcrypto
+openai
+dnspython
+pymongo
+python-dotenv
